@@ -18,6 +18,8 @@ int b2;
 int c2;
 int w3;
 int b3;
+int c3;
+int b4;
 int counter;
 
 
@@ -32,6 +34,8 @@ void setup() {
   c2=400;
   w3=300;
   b3=500;
+  c3=660;
+  b4=760;
   x=-100;//starting value road
   y=50;
   a=200;
@@ -121,6 +125,17 @@ void draw() {
   rect(c2,512,100,20);
   rect(c2-10,483,20,31,5);
   rect(c2+90,483,10,38,5);
+  rect(c2+20,530,10,50);
+  rect(c2+70,530,10,70);
+  rect(c2+45,530,10,110);
+  fill(#EDDC1D);
+  stroke(0);
+  strokeWeight(5);
+  ellipse(c2+25,580,20,20);
+  ellipse(c2+75,600,20,20);
+  ellipse(c2+50,640,20,20);
+  noStroke();
+  fill(0);
   
   //building 3
   rect(b3,464,160,237);
@@ -150,9 +165,25 @@ void draw() {
   if (counter<50) {
   rect(b3+21,583,118,80);
   }
+  
+  //connection 3
+  stroke(0);
+  strokeWeight(20);
+  line(c3-10,572,c3+130,473);
+  noStroke();
+  
+  //building 4
+  fill(0);
+  quad(b4,700,b4+30,384,b4+210,384,b4+240,700);
+  fill(0);
+  quad(b4+30,384,b4+80,320,b4+160,320,b4+210,384);
+  fill(#EDDC1D);
+  quad(b4+40,384,b4+84,330,b4+156,330,b4+200,384);
+
+  
+  
  
-  //b1=b1+2; w1=w1+2; w2=w2+2; c1=c1+2;
-  //b2=b2+2; w3=w3+2; b3=b3+2;
+  //b1=b1+2; w1=w1+2; w2=w2+2; c1=c1+2; b2=b2+2; w3=w3+2; b3=b3+2; c2=c2+2; c3=c3+2; b4=b4+2;
   
   x=x+3; y=y+3; a=a+3; b=b+3; c=c+3; d=d+3; e=e+3; f=f+3; g=g+3;
   //road details moving
@@ -185,6 +216,9 @@ void draw() {
   } 
   if (counter>50) {
     counter=0;
+  }
+  if(b4>1000) {
+    b4=-100;
   }
     drawMouseCoordinates();
 }
