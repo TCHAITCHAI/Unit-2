@@ -20,12 +20,16 @@ int w3;
 int b3;
 int c3;
 int b4;
+int b5;
 int counter;
 
+color startcolor = color(#EDDC1D);
+color endcolor = color(#F5A328);
+float t = 0;
 
 
 void setup() {
-  size(1000, 1000);
+  size(1200, 1000);
   b1=0;//starting value buildings
   w1=10;
   w2=60;
@@ -36,6 +40,7 @@ void setup() {
   b3=500;
   c3=660;
   b4=760;
+  b5=1000;
   x=-100;//starting value road
   y=50;
   a=200;
@@ -179,9 +184,18 @@ void draw() {
   quad(b4+30,384,b4+80,320,b4+160,320,b4+210,384);
   fill(#EDDC1D);
   quad(b4+40,384,b4+84,330,b4+156,330,b4+200,384);
+  quad(b4+40,394,b4+200,394,b4+156,448,b4+84,448);
+  stroke(#424243);
+  strokeCap(SQUARE);
+  strokeWeight(20);
+  line(b4+25,700,b4+43,500);
+  line(b4+215,700,b4+197,500);
+  stroke(0);
+  line(b4+210,478,b4+440,478);
+  
+  //building 5
+ 
 
-  
-  
  
   //b1=b1+2; w1=w1+2; w2=w2+2; c1=c1+2; b2=b2+2; w3=w3+2; b3=b3+2; c2=c2+2; c3=c3+2; b4=b4+2;
   
@@ -217,9 +231,7 @@ void draw() {
   if (counter>50) {
     counter=0;
   }
-  if(b4>1000) {
-    b4=-100;
-  }
+ 
     drawMouseCoordinates();
 }
 
