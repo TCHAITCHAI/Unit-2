@@ -427,15 +427,4 @@ void draw() {
   }
 
  
-    drawMouseCoordinates();
 }
-
-void drawMouseCoordinates() {
-  fill(#FF0000); // Red color
-  textSize(30);
-  textAlign(LEFT, TOP);
-  text("X: " + mouseX + "  Y: " + mouseY, 10, 10);
-}              
-      
-  
-  
